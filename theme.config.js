@@ -68,7 +68,12 @@ export default {
   prevLinks: true,
   nextLinks: true,
   footer: true,
+  floatTOC: true,
   footerEditLink: 'Edit this page on GitHub',
   footerText: <>{new Date().getFullYear()} © Vibra.</>,
   unstable_faviconGlyph: '👋',
+  i18n: [
+    { locale: 'en', text: 'English' },
+    { locale: 'es', text: 'Español' },
+  ],
 }
