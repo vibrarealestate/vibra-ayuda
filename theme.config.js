@@ -1,10 +1,13 @@
-export default {
+import Logo from './components/Logo'
+
+const themeConfig = {
   github: 'https://github.com/shuding/nextra',
   docsRepositoryBase: 'https://github.com/shuding/nextra/blob/master',
   titleSuffix: ' – Vibra',
   logo: (
     <>
-      <span className="mr-2 font-extrabold hidden md:inline">Vibra</span>
+      {/* <span className="mr-2 font-extrabold hidden md:inline">Vibra</span> */}
+      <Logo withLetters />
       <span className="text-gray-600 font-normal hidden md:inline">Ayuda</span>
     </>
   ),
@@ -77,3 +80,5 @@ export default {
     { locale: 'es', text: 'Español' },
   ],
 }
+
+export default themeConfig
