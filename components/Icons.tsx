@@ -7,6 +7,7 @@ export function VibraIcon({ size = 40 }) {
       height={size}
       viewBox="0 0 668.000000 480.000000"
       preserveAspectRatio="xMidYMid meet"
+      className="vibra-icon"
     >
       <g
         transform="translate(0.000000,480.000000) scale(0.100000,-0.100000)"

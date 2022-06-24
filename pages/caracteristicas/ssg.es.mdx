@@ -2,7 +2,7 @@
 
 With Next.js, you can pre-render your page using [Static Generation (SSG)](https://nextjs.org/docs/basic-features/pages#static-generation-recommended). Your pages will be generated at build time and statically served to visitors. It can also be cached by a CDN to maximize the performance.
 
-This is supported by Nextra too. Here's an example:
+This is supported by Vibra too. Here's an example:
 
 import { useSSG } from 'nextra/ssg'
 
@@ -12,7 +12,7 @@ export const getStaticProps = ({ params }) => {
     .then((repo) => ({
       props: {
         // We add an `ssg` field to the page props,
-        // which will be provided to the Nextra `useSSG` hook.
+        // which will be provided to the Vibra `useSSG` hook.
         ssg: {
           stars: repo.stargazers_count,
         },
@@ -29,7 +29,7 @@ export const Stars = () => {
 }
 
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-  Nextra has <Stars /> stars on GitHub!
+  Vibra has <Stars /> stars on GitHub!
 </div>
 
 The number above was generated at build time via `getStaticProps`. With [Incremental Static Regeneration](https://nextjs.org/docs/basic-features/data-fetching#incremental-static-regeneration) enabled, it will be kept up to date.
@@ -47,7 +47,7 @@ export const getStaticProps = ({ params }) => {
     .then((repo) => ({
       props: {
         // We add an `ssg` field to the page props,
-        // which will be provided to the Nextra `useSSG` hook.
+        // which will be provided to the Vibra `useSSG` hook.
         ssg: {
           stars: repo.stargazers_count,
         },
@@ -64,5 +64,5 @@ export const Stars = () => {
 }
 
 
-Nextra has <Stars /> stars on GitHub!
+Vibra has <Stars /> stars on GitHub!
 ```

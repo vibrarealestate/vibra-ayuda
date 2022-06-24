@@ -1,6 +1,7 @@
+import '../styles.css'
 import 'nextra-theme-docs/style.css'
 import '../public/fonts/fonts.css'
 
-export default function Nextra({ Component, pageProps }) {
+export default function VibraHelp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }

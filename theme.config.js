@@ -1,16 +1,56 @@
 import Logo from './components/Logo'
+import { XIcon } from './components/Icons'
+import { useRouter } from 'next/router'
+
+const TITLE_WITH_TRANSLATIONS = {
+  en: 'We made easy to find the Home of your Dreams',
+  es: 'Hacemos fácil encontrar el Hogar de tus Sueños',
+}
+
+const FEEDBACK_LINK_WITH_TRANSLATIONS = {
+  en: 'Question? Give us feedback →',
+  en: 'Tienes preguntas? Ayúdanos a mejorar →',
+}
 
 const themeConfig = {
-  github: 'https://github.com/shuding/nextra',
-  docsRepositoryBase: 'https://github.com/shuding/nextra/blob/master',
+  github: 'https://github.com/vibrarealestate/vibra-ayuda',
+  docsRepositoryBase:
+    'https://github.com/vibrarealestate/vibra-ayuda/blob/master',
+  // projectLinkIcon: <XIcon />,
   titleSuffix: ' – Vibra',
-  logo: (
-    <>
-      {/* <span className="mr-2 font-extrabold hidden md:inline">Vibra</span> */}
-      <Logo withLetters />
-      <span className="text-gray-600 font-normal hidden md:inline">Ayuda</span>
-    </>
-  ),
+  // font: false,
+  // unstable_flexsearch: true,
+  unstable_faviconGlyph: '⛺',
+  // unstable_staticImage: true,
+  search: true,
+  prevLinks: true,
+  nextLinks: true,
+  // footer: true,
+  floatTOC: true,
+  feedbackLink: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { locale } = useRouter()
+    return (
+      FEEDBACK_LINK_WITH_TRANSLATIONS[locale] ||
+      FEEDBACK_LINK_WITH_TRANSLATIONS['en']
+    )
+  },
+  feedbackLabels: 'feedback',
+  logo: () => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { locale } = useRouter()
+    return (
+      <>
+        <Logo
+          withLetters
+          title={'Vibra: ' + (TITLE_WITH_TRANSLATIONS[locale] || '')}
+        />
+        <span className="text-gray-600 font-normal hidden md:inline ml-4">
+          Ayuda
+        </span>
+      </>
+    )
+  },
   head: (
     <>
       <meta name="msapplication-TileColor" content="#ffffff" />
@@ -67,14 +107,25 @@ const themeConfig = {
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
     </>
   ),
-  search: true,
-  prevLinks: true,
-  nextLinks: true,
-  footer: true,
-  floatTOC: true,
-  footerEditLink: 'Edit this page on GitHub',
+  footerEditLink: ({ locale }) => {
+    switch (locale) {
+      case 'zh-CN':
+        return '在 GitHub 上编辑本页 →'
+      case 'en':
+        return 'Edit this page on GitHub →'
+      case 'pt-BR':
+        return 'Edite essa página no GitHub →'
+      case 'ja':
+        return 'Github で編集する →'
+      case 'ko':
+        return 'Github에서 이 페이지 편집하기 →'
+      case 'ru':
+        return 'Редактировать на GitHub →'
+      default:
+        return 'Edita esta página en GitHub →'
+    }
+  },
   footerText: <>{new Date().getFullYear()} © Vibra.</>,
-  unstable_faviconGlyph: '👋',
   i18n: [
     { locale: 'en', text: 'English' },
     { locale: 'es', text: 'Español' },

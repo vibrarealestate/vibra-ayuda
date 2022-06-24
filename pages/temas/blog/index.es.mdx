@@ -11,7 +11,7 @@ Similar to the docs theme, you can install the blog theme with the following com
 
 ### Configurations
 
-1. Install Next.js, Nextra and React: `yarn add next nextra react react-dom`
+1. Install Next.js, Vibra and React: `yarn add next nextra react react-dom`
 
 2. Install the blog theme: `yarn add nextra-theme-blog`
 
@@ -22,7 +22,7 @@ Similar to the docs theme, you can install the blog theme with the following com
 const withNextra = require('nextra')({
   theme: 'nextra-theme-blog',
   themeConfig: './theme.config.js',
-  // optional: add `unstable_staticImage: true` to enable Nextra's auto image import
+  // optional: add `unstable_staticImage: true` to enable Vibra's auto image import
 })
 module.exports = withNextra()
 ```
@@ -30,10 +30,12 @@ module.exports = withNextra()
 ```jsx
 // theme.config.js
 export default {
-  footer: <p>MIT 2021 © Nextra.</p>,
+  footer: <p>MIT 2021 © Vibra.</p>,
   head: ({ title, meta }) => (
     <>
-      {meta.description && <meta name="description" content={meta.description} />}
+      {meta.description && (
+        <meta name="description" content={meta.description} />
+      )}
       {meta.tag && <meta name="keywords" content={meta.tag} />}
       {meta.author && <meta name="author" content={meta.author} />}
     </>
@@ -44,15 +46,15 @@ export default {
   cusdis: {
     appId: 'your_app_id',
     host: 'your_host(optional)',
-    lang: 'your_lang'
+    lang: 'your_lang',
   },
   darkMode: false,
   navs: [
     {
-      url: 'https://github.com/shuding/nextra',
-      name: 'Nextra'
-    }
-  ]
+      url: 'https://github.com/vibrarealestate/vibra-ayuda',
+      name: 'Vibra',
+    },
+  ],
 }
 ```
 
@@ -61,7 +63,7 @@ export default {
 ```jsx
 import 'nextra-theme-blog/style.css'
 
-export default function Nextra({ Component, pageProps }) {
+export default function Vibra({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 ```
