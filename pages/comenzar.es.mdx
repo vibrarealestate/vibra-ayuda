@@ -1,102 +1,33 @@
+import Bleed from 'nextra-theme-docs/bleed'
+
 # Comenzar
 
-## Comienza con Vibra
+## Comienza en Vibra
 
-You can start by creating your own Vibra site and deploying to Vercel by clicking the link:
+Puedes comenzar buscando hogares en venta o arriendo, o puedes crear una cuenta para guardar hogares favoritos y para acceder a tu perfil.
 
-[![](https://vercel.com/button)](https://vercel.com/new/clone?demo-description=Markdown%20powered%20docs%20site.%20Built%20with%20Next.js.&demo-image=https%3A%2F%2Fnextra.vercel.app%2Fdemo.png&demo-title=Documentation%20Starter%20Kit&demo-url=https%3A%2F%2Fnextra.vercel.app%2F&project-name=nextjs-docs&repository-name=nextjs-docs&s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra&from=templates)
+## Comienza la búsqueda
 
-Vercel will create the Vibra repository and deploy the site for you with just a few clicks.
-Once done, every change in the repository will be deployed automatically.
+Comienza tu busqueda ingresando a [Vibra.la](https://vibra.la)
+
+<Bleed>![Vibra Landing](../public/images/vibra-landing.png)</Bleed>
 
 ## Crear una cuenta
 
-Vibra works like a Next.js plugin, and it accepts a theme config (layout) to render the page. To start:
+Para crear una cuenta en **Vibra.la** ingresa a _[Crear Cuenta](https://vibra.la/crear-cuenta)_.
 
-1. Install Next.js, Vibra and React: `yarn add next nextra react react-dom`
+1. Ingresa tus datos personales
 
-2. Install the docs theme (you can use any theme you like): `yarn add nextra-theme-docs`
+2. Ingresa tu correo electronico
 
-3. Create the following Next.js config:
+3. Crea una nueva contraseña
 
-```jsx
-// next.config.js
-const withNextra = require('nextra')({
-  theme: 'nextra-theme-docs',
-  themeConfig: './theme.config.js',
-  // optional: add `unstable_staticImage: true` to enable Vibra's auto image import
-})
-module.exports = withNextra()
-```
+<Bleed>![Vibra Landing](../public/images/signup.png)</Bleed>
 
-4. Create a `theme.config.js` file for the docs theme:
-
-```jsx
-// theme.config.js
-export default {
-  projectLink: 'https://github.com/vibrarealestate/vibra-ayuda', // GitHub link in the navbar
-  docsRepositoryBase:
-    'https://github.com/vibrarealestate/vibra-ayuda/blob/master', // base URL for the docs repository
-  titleSuffix: ' – Vibra',
-  nextLinks: true,
-  prevLinks: true,
-  search: true,
-  customSearch: null, // customizable, you can use algolia for example
-  darkMode: true,
-  footer: true,
-  footerText: `${new Date().getFullYear()} © Vibra`,
-  footerEditLink: `Edit this page on GitHub`,
-  logo: (
-    <>
-      <svg>...</svg>
-      <span>Vibra</span>
-    </>
-  ),
-  head: (
-    <>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta
-        name="description"
-        content="Vibra: Hacemos facil encontrar el hogar de tus sueños"
-      />
-      <meta
-        name="og:title"
-        content="Vibra: Hacemos facil encontrar el hogar de tus sueños"
-      />
-    </>
-  ),
-}
-```
+<span id="sidebar-and-anchor-links" />
 
 import Callout from 'nextra-theme-docs/callout'
 
-<Callout>
-  More configuration options for the docs theme can be found
-  [here](/themes/docs/configuration).
-</Callout>
-
-5. Create `pages/_app.js` and include the theme stylesheet:
-
-```jsx
-import 'nextra-theme-docs/style.css'
-
-export default function Vibra({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
-```
-
-6. You are good to go! Run `yarn next` to start.
+<Callout>Si ya tienes una cuenta, por favor inicia sesión.</Callout>
 
 ---
-
-<span id="sidebar-and-anchor-links" />
-<Callout>
-  Any `.md` or `.mdx` file will turn into a doc page and be displayed in
-  sidebar. You can also create a `meta.json` file to customize the page order
-  and title. <br /> Check the source code:
-  https://github.com/vibrarealestate/vibra-ayuda for more information.
-</Callout>
-
-<Callout>
-You can also use [`<style jsx>`](https://nextjs.org/docs/basic-features/built-in-css-support#css-in-js) to style elements inside `theme.config.js`.
-</Callout>

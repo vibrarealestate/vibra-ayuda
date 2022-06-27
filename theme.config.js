@@ -16,26 +16,14 @@ const themeConfig = {
   github: 'https://github.com/vibrarealestate/vibra-ayuda',
   docsRepositoryBase:
     'https://github.com/vibrarealestate/vibra-ayuda/blob/master',
-  // projectLinkIcon: <XIcon />,
   titleSuffix: ' – Vibra',
-  // font: false,
   // unstable_flexsearch: true,
   unstable_faviconGlyph: '⛺',
   // unstable_staticImage: true,
   search: true,
   prevLinks: true,
   nextLinks: true,
-  // footer: true,
-  floatTOC: true,
-  feedbackLink: () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const { locale } = useRouter()
-    return (
-      FEEDBACK_LINK_WITH_TRANSLATIONS[locale] ||
-      FEEDBACK_LINK_WITH_TRANSLATIONS['en']
-    )
-  },
-  feedbackLabels: 'feedback',
+  footer: true,
   logo: () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { locale } = useRouter()
@@ -127,9 +115,19 @@ const themeConfig = {
   },
   footerText: <>{new Date().getFullYear()} © Vibra.</>,
   i18n: [
-    { locale: 'en', text: 'English' },
     { locale: 'es', text: 'Español' },
+    { locale: 'en', text: 'English' },
   ],
+  // floatTOC: true,
+  // feedbackLink: () => {
+  //   // eslint-disable-next-line react-hooks/rules-of-hooks
+  //   const { locale } = useRouter()
+  //   return (
+  //     FEEDBACK_LINK_WITH_TRANSLATIONS[locale] ||
+  //     FEEDBACK_LINK_WITH_TRANSLATIONS['en']
+  //   )
+  // },
+  // feedbackLabels: 'feedback',
 }
 
 export default themeConfig
